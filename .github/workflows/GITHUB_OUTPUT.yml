@@ -3,11 +3,11 @@ on: push
 jobs:
   share:
     runs-on: ubuntu-latest
-    env:
-      RESULT: ${{steps.source.outputs.result}}
     steps:
       - run: echo "${GITHUB_OUTPUT}"
       - id: source
         run: echo "result=Hello" >> "${GITHUB_OUTPUT}"
       - run: echo "${RESULT}"
-        
+        env:
+          RESULT: ${{steps.source.outputs.result}} #steps.(id).outputs.(キー)
+          
