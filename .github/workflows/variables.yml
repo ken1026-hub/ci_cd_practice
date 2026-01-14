@@ -6,4 +6,4 @@ jobs:
     env:
       USERNAME: ${{vars.USERNAME}} #GitHubで評価した値をシェル側の実行環境で評価されるように環境変数経由としている。（エスケープ処理がされる）
     steps:
-      - run: echo "${USERNAME}"
+      - run: echo "${USERNAME}" #ダブルクォートは必要。なければ、スペース区切りで一つのパラメータとしてみなされる。一つのパラメータとして渡す為につける
