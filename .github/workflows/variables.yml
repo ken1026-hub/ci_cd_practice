@@ -1,0 +1,9 @@
+name: Variables
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{vars.USERNAME}} #GitHubで評価した値をシェル側の実行環境で評価されるように環境変数経由としている。（エスケープ処理がされる）
+    steps:
+      - run: echo "${USERNAME}"
