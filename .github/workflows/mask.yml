@@ -13,6 +13,8 @@ jobs:
       - run: echo "::warning::This is a warning"
       - run: echo "::notice::This is an notice"
       - run: |
-          echo "## Example Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
-          echo "- first line" >> "${GITHUB_STEP_SUMMARY}"
-          echo "- second line" >> "${GITHUB_STEP_SUMMARY}"
+          {
+            echo "## Example Title :rocket:"
+            echo "- first line"
+            echo "- second line" 
+          } >> "${GITHUB_STEP_SUMMARY}"
