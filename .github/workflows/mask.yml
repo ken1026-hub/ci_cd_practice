@@ -8,4 +8,8 @@ jobs:
     steps:
       - run: echo "::add-mask::${PASSWORD}"
       - run: echo "${PASSWORD}"
+      #アノテーション
+      - run: echo "::error::This is an error"
+      - run: echo "::warning::This is a warning"
+      - run: echo "::notice::This is an notice"
     
