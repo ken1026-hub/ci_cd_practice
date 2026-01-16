@@ -1,7 +1,7 @@
 name: Static analysis
 on:
   pull_request:
-    paths: ['./github/workflows/*.ya?ml']
+    paths: ['.github/workflows/*.ya?ml']
 defaults:
   run:
     shell: bash
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - run: echo "${{github.workflow}}-${{github.ref}}"
+      - run: echo "${{github.workflow}}-${{github.ref}} "
       - uses: actions/checkout@v4
       - run: |
          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
